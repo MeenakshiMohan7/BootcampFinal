@@ -1,5 +1,8 @@
 <p>Task works!</p>
 <div class="taskBox">
+  <div class="example-button-row">
+    <button mat-raised-button color="primary">Add New Task</button>
+  </div>
     <mat-accordion>
         <mat-expansion-panel hideToggle>
           <mat-expansion-panel-header>
@@ -11,6 +14,10 @@
             </mat-panel-description>
           </mat-expansion-panel-header>
           <p>This is the primary content of the panel.</p>
+          <div class="example-button-row">
+            <button mat-raised-button color="primary">Edit</button>
+            <button mat-raised-button color="warn">Delete</button>
+          </div>
         </mat-expansion-panel>
         <mat-expansion-panel (opened)="panelOpenState = true"
                              (closed)="panelOpenState = false">
