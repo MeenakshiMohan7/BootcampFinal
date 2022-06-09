@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { NewTaskDialogComponent } from '../new-task-dialog/new-task-dialog.component';
 
 @Component({
   selector: 'app-taskcomponent',
@@ -7,7 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TaskcomponentComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
+  
+  openDialog() {
+    this.dialog.open(NewTaskDialogComponent);
+  }
+
   panelOpenState = false;
   tasks = [
     { title:"Task1", summary:"This is task1", description:"1989 is the fifth studio album"},

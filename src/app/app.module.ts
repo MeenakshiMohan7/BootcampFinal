@@ -8,6 +8,7 @@ import { SignupcomponentComponent } from './signupcomponent/signupcomponent.comp
 import { LogincomponentComponent } from './logincomponent/logincomponent.component';
 import { HeadercomponentComponent } from './headercomponent/headercomponent.component';
 import { HomecomponentComponent } from './homecomponent/homecomponent.component';
+import { NewTaskDialogComponent } from './new-task-dialog/new-task-dialog.component'
 import {HttpClientModule} from '@angular/common/http';
 import { TaskcomponentComponent } from './taskcomponent/taskcomponent.component';
 import {MatExpansionModule} from '@angular/material/expansion';
@@ -18,6 +19,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 // import { MatAccordion } from '@angular/material/expansion/accordion';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,7 @@ import {MatButtonModule} from '@angular/material/button';
     HeadercomponentComponent,
     HomecomponentComponent,
     TaskcomponentComponent,
+    NewTaskDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -39,8 +42,10 @@ import {MatButtonModule} from '@angular/material/button';
     MatFormFieldModule,
     MatIconModule,
     MatButtonModule,
+    MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [NewTaskDialogComponent]
 })
 export class AppModule { }
