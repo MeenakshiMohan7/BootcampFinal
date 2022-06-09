@@ -12,7 +12,11 @@ export class TaskcomponentComponent implements OnInit {
   constructor(public dialog: MatDialog) { }
   
   openDialog() {
-    this.dialog.open(NewTaskDialogComponent);
+    let dialogRef = this.dialog.open(NewTaskDialogComponent);
+
+    dialogRef.afterClosed().subscribe( result => {
+      console.log('Dialog result: ', result)
+    });
   }
 
   panelOpenState = false;
