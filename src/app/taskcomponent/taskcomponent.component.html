@@ -4,7 +4,7 @@
     <button mat-raised-button color="primary">Add New Task</button>
   </div>
     <mat-accordion>
-        <mat-expansion-panel *ngFor="let task of tasks" hideToggle>
+        <mat-expansion-panel *ngFor="let task of tasks; index as i" hideToggle>
           <mat-expansion-panel-header>
             <mat-panel-title>
               {{ task.title }}
@@ -16,7 +16,7 @@
           <p>{{ task.description }}</p>
           <div class="example-button-row">
             <button mat-raised-button color="primary">Edit</button>
-            <button mat-raised-button color="warn">Delete</button>
+            <button mat-raised-button color="warn" (click)="onDeleteTask(i)" >Delete</button>
           </div>
         </mat-expansion-panel>
         <!-- <mat-expansion-panel (opened)="panelOpenState = true"

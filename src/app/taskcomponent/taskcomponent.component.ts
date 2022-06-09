@@ -15,6 +15,12 @@ export class TaskcomponentComponent implements OnInit {
     { title:"Task3", summary:"This is task3", description:"It was released on October 27, 2014"},
     { title:"Task4", summary:"This is task4", description:"The album's synth-pop sound is characterized by heavy synthesizers,"}
   ]
+
+  onDeleteTask(index: number) {
+    if (index !== -1) {
+        this.tasks.splice(index, 1);
+  }
+}
   ngOnInit(): void {
   }
 
