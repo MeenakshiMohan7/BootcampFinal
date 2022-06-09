@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class TaskcomponentComponent implements OnInit {
 
   constructor() { }
+  panelOpenState = false;
 
   ngOnInit(): void {
   }
