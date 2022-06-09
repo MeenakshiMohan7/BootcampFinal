@@ -1,7 +1,8 @@
 
 <div class="taskBox">
   <div class="example-button-row">
-    <button mat-raised-button color="primary" (click)="openDialog()">Add New Task</button>
+    <button mat-raised-button color="primary" (click)="openNewTaskDialog()">Add New Task</button>
+    <button mat-raised-button color="primary" (click)="editTaskDialog()">Edit Task</button>
   </div>
     <mat-accordion>
         <mat-expansion-panel *ngFor="let task of tasks; index as i" hideToggle>

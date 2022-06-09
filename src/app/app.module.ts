@@ -9,6 +9,7 @@ import { LogincomponentComponent } from './logincomponent/logincomponent.compone
 import { HeadercomponentComponent } from './headercomponent/headercomponent.component';
 import { HomecomponentComponent } from './homecomponent/homecomponent.component';
 import { NewTaskDialogComponent } from './new-task-dialog/new-task-dialog.component'
+import { EditTaskDialogComponent } from './edit-task-dialog/edit-task-dialog.component'
 import {HttpClientModule} from '@angular/common/http';
 import { TaskcomponentComponent } from './taskcomponent/taskcomponent.component';
 import {MatExpansionModule} from '@angular/material/expansion';
@@ -29,7 +30,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     HeadercomponentComponent,
     HomecomponentComponent,
     TaskcomponentComponent,
-    NewTaskDialogComponent
+    NewTaskDialogComponent,
+    EditTaskDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +48,6 @@ import {MatDialogModule} from '@angular/material/dialog';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [NewTaskDialogComponent]
+  entryComponents: [NewTaskDialogComponent, EditTaskDialogComponent]
 })
 export class AppModule { }

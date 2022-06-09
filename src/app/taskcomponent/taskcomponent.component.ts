@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { EditTaskDialogComponent } from '../edit-task-dialog/edit-task-dialog.component';
 import { NewTaskDialogComponent } from '../new-task-dialog/new-task-dialog.component';
 
 @Component({
@@ -11,10 +12,18 @@ export class TaskcomponentComponent implements OnInit {
 
   constructor(public dialog: MatDialog) { }
   
-  openDialog() {
-    let dialogRef = this.dialog.open(NewTaskDialogComponent);
+  openNewTaskDialog() {
+    let newTaskDialogRef = this.dialog.open(NewTaskDialogComponent);
 
-    dialogRef.afterClosed().subscribe( result => {
+    newTaskDialogRef.afterClosed().subscribe( result => {
+      console.log('Dialog result: ', result)
+    });
+  }
+
+  editTaskDialog() {
+    let editDialogRef = this.dialog.open(EditTaskDialogComponent);
+
+    editDialogRef.afterClosed().subscribe( result => {
       console.log('Dialog result: ', result)
     });
   }
