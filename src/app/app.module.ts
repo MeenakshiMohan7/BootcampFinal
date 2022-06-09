@@ -9,6 +9,7 @@ import { LogincomponentComponent } from './logincomponent/logincomponent.compone
 import { HeadercomponentComponent } from './headercomponent/headercomponent.component';
 import { HomecomponentComponent } from './homecomponent/homecomponent.component';
 import {HttpClientModule} from '@angular/common/http';
+import { TaskcomponentComponent } from './taskcomponent/taskcomponent.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {HttpClientModule} from '@angular/common/http';
     SignupcomponentComponent,
     LogincomponentComponent,
     HeadercomponentComponent,
-    HomecomponentComponent
+    HomecomponentComponent,
+    TaskcomponentComponent
   ],
   imports: [
     BrowserModule,
