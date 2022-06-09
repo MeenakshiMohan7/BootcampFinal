@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { EditTaskDialogComponent } from '../edit-task-dialog/edit-task-dialog.component';
 import { NewTaskDialogComponent } from '../new-task-dialog/new-task-dialog.component';
 
@@ -21,7 +21,10 @@ export class TaskcomponentComponent implements OnInit {
   }
 
   editTaskDialog() {
-    let editDialogRef = this.dialog.open(EditTaskDialogComponent);
+    const dialogConfig = new MatDialogConfig();
+    let editDialogRef = this.dialog.open(EditTaskDialogComponent, {
+      data : {taskName: 'Edit me!'}
+      });
 
     editDialogRef.afterClosed().subscribe( result => {
       console.log('Dialog result: ', result)
