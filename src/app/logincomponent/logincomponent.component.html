@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body class="test">
+    <div class="log-form">
+        <h2>Login to your account</h2>
+        <form #userlogin="ngForm" (click)="userVerify()">
+          <input type="text" title="username" placeholder="username" class="form-control" [(ngModel)]="username" required name="username"/>
+          <input type="password" title="username" placeholder="password" class="form-control" [(ngModel)]="password" required name="password"/>
+          <button type="submit"  class="btn">Login</button>
+          <a class="forgot" href="#">Forgot Username?</a>
+        </form>
+      
+      </div>
+</body>
+</html>
