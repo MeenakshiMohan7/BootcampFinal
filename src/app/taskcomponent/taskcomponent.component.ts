@@ -9,7 +9,12 @@ export class TaskcomponentComponent implements OnInit {
 
   constructor() { }
   panelOpenState = false;
-
+  tasks = [
+    "Task1",
+    "Task2",
+    "Task3",
+    "Task4"
+  ]
   ngOnInit(): void {
   }
 

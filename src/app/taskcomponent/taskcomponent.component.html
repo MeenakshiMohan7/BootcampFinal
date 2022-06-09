@@ -1,13 +1,13 @@
-<p>Task works!</p>
+
 <div class="taskBox">
   <div class="example-button-row">
     <button mat-raised-button color="primary">Add New Task</button>
   </div>
     <mat-accordion>
-        <mat-expansion-panel hideToggle>
+        <mat-expansion-panel *ngFor="let task of tasks" hideToggle>
           <mat-expansion-panel-header>
             <mat-panel-title>
-              This is the expansion title
+              {{ task }}
             </mat-panel-title>
             <mat-panel-description>
               This is a summary of the content
@@ -19,7 +19,7 @@
             <button mat-raised-button color="warn">Delete</button>
           </div>
         </mat-expansion-panel>
-        <mat-expansion-panel (opened)="panelOpenState = true"
+        <!-- <mat-expansion-panel (opened)="panelOpenState = true"
                              (closed)="panelOpenState = false">
           <mat-expansion-panel-header>
             <mat-panel-title>
@@ -30,7 +30,7 @@
             </mat-panel-description>
           </mat-expansion-panel-header>
           <p>I'm visible because I am open</p>
-        </mat-expansion-panel>
+        </mat-expansion-panel> -->
       </mat-accordion>
       
 </div>
