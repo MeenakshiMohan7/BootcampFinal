@@ -1,9 +1,9 @@
-<h2 mat-dialog-title> Edit Task</h2>
+<h2 mat-dialog-title> Edit Task {{ data.selectedTask.title }}</h2>
 <mat-dialog-content>
     <form>
         <div class="form-group">
             <label for="taskNum">Task Number : </label>
-                <input id="taskNum" type="text" class="form-control">
+                <input id="taskNum" type="text" class="form-control" >
         </div>
         <div class="form-group">
             <label for="taskTitle">Title : </label>

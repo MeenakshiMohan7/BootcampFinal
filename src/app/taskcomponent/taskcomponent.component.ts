@@ -20,12 +20,13 @@ export class TaskcomponentComponent implements OnInit {
     });
   }
 
-  editTaskDialog() {
+  editTaskDialog(index: number) {
     const dialogConfig = new MatDialogConfig();
     let editDialogRef = this.dialog.open(EditTaskDialogComponent, {
-      data : {taskName: 'Edit me!'}
+      // data : {taskName: '#TOM167'}
+      data : { selectedTask : this.tasks[index]}
       });
-
+    // console.log("index: ",index,"array : ",this.tasks[index].title)
     editDialogRef.afterClosed().subscribe( result => {
       console.log('Dialog result: ', result)
     });
@@ -33,10 +34,10 @@ export class TaskcomponentComponent implements OnInit {
 
   panelOpenState = false;
   tasks = [
-    { title:"Task1", summary:"This is task1", description:"1989 is the fifth studio album"},
-    { title:"Task2", summary:"This is task2", description:"by American singer-songwriter Taylor Swift"},
-    { title:"Task3", summary:"This is task3", description:"It was released on October 27, 2014"},
-    { title:"Task4", summary:"This is task4", description:"The album's synth-pop sound is characterized by heavy synthesizers,"}
+    { title:"#98457", summary:"This is task", description:"1989 is the fifth studio album"},
+    { title:"#4759", summary:"This is task", description:"by American singer-songwriter Taylor Swift"},
+    { title:"#24324", summary:"This is task", description:"It was released on October 27, 2014"},
+    { title:"#5234", summary:"This is task", description:"The album's synth-pop sound is characterized by heavy synthesizers,"}
   ]
 
   onDeleteTask(index: number) {
@@ -44,6 +45,7 @@ export class TaskcomponentComponent implements OnInit {
         this.tasks.splice(index, 1);
   }
 }
+
   ngOnInit(): void {
   }
 

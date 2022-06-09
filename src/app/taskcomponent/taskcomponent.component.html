@@ -2,7 +2,7 @@
 <div class="taskBox">
   <div class="example-button-row">
     <button mat-raised-button color="primary" (click)="openNewTaskDialog()">Add New Task</button>
-    <button mat-raised-button color="primary" (click)="editTaskDialog()">Edit Task</button>
+    <!-- <button mat-raised-button color="primary" (click)="editTaskDialog()">Edit Task</button> -->
   </div>
     <mat-accordion>
         <mat-expansion-panel *ngFor="let task of tasks; index as i" hideToggle>
@@ -12,11 +12,12 @@
             </mat-panel-title>
             <mat-panel-description>
               {{ task.summary }}
+              {{ i }}
             </mat-panel-description>
           </mat-expansion-panel-header>
           <p>{{ task.description }}</p>
           <div class="example-button-row">
-            <button mat-raised-button color="primary">Edit</button>
+            <button mat-raised-button color="primary" (click)="editTaskDialog(i)">Edit</button>
             <button mat-raised-button color="warn" (click)="onDeleteTask(i)" >Delete</button>
           </div>
         </mat-expansion-panel>
