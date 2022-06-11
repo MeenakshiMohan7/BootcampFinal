@@ -28,7 +28,7 @@ export class TaskcomponentComponent implements OnInit {
     let editDialogRef = this.dialog.open(EditTaskDialogComponent, {
       data : { selectedTask : this.tasks[index]}
       });
-      
+
     editDialogRef.afterClosed().subscribe( result => {
       if(result) {
         console.log('Dialog result: ', result)
@@ -40,10 +40,10 @@ export class TaskcomponentComponent implements OnInit {
 
   panelOpenState = false;
   tasks = [
-    { title:"#98457", summary:"This is task", description:"1989 is the fifth studio album"},
-    { title:"#4759", summary:"This is task", description:"by American singer-songwriter Taylor Swift"},
-    { title:"#24324", summary:"This is task", description:"It was released on October 27, 2014"},
-    { title:"#5234", summary:"This is task", description:"The album's synth-pop sound is characterized by heavy synthesizers,"}
+    { title:"#98457", summary:"Task 1", description:"1989 is the fifth studio album"},
+    { title:"#4759", summary:"Task 2", description:"by American singer-songwriter Taylor Swift"},
+    { title:"#24324", summary:"Task 3", description:"It was released on October 27, 2014"},
+    { title:"#5234", summary:"Task 4", description:"The album's synth-pop sound is characterized by heavy synthesizers,"}
   ]
 
   onDeleteTask(index: number) {
