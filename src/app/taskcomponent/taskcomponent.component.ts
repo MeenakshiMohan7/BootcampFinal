@@ -16,19 +16,25 @@ export class TaskcomponentComponent implements OnInit {
     let newTaskDialogRef = this.dialog.open(NewTaskDialogComponent);
 
     newTaskDialogRef.afterClosed().subscribe( result => {
-      console.log('Dialog result: ', result)
+      if(result) {
+        console.log('Dialog result: ',result)
+      this.tasks.push(result)
+      }
     });
   }
 
   editTaskDialog(index: number) {
     const dialogConfig = new MatDialogConfig();
     let editDialogRef = this.dialog.open(EditTaskDialogComponent, {
-      // data : {taskName: '#TOM167'}
       data : { selectedTask : this.tasks[index]}
       });
-    // console.log("index: ",index,"array : ",this.tasks[index].title)
+      
     editDialogRef.afterClosed().subscribe( result => {
-      console.log('Dialog result: ', result)
+      if(result) {
+        console.log('Dialog result: ', result)
+      this.tasks[index] = result
+      console.log("edited one",this.tasks[index])
+      }
     });
   }
 
